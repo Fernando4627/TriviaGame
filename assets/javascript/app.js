@@ -37,6 +37,7 @@ let vGQuestions= {
         "Red, Purple, Yellow",
         "2012, 2014, 2015", //this will go for array 4 and 6
         "Princess Daisy, Princess Zelda, Princess Rosalina",
+        "2012, 2014, 2015",
         "Needs Extra Space, Never Ending Story, National Entertainment System",
         "Kirby, Sonic, Banjo-Kazooie",
         "2008, 2010, 2011",
