@@ -53,10 +53,10 @@ let startbutton = function () {
 };
 startbutton();
 //add start button to html
-$('startbutton').on('click', function(){
-    $('startbutton').remove();
+$('#startbutton').on('click', function(){
+    $('#startbutton').remove();
     let results = function(){
-        $('.trivia').empty();
+        //$('.trivia').empty();
         $('.trivia').text('Let evaluate you');
     }
     let timer=setTimeout(results,70000);
@@ -66,13 +66,13 @@ $('startbutton').on('click', function(){
     //add questionsto html
     let vGQuestions = function(){
         let randomQ = vGQuestions.questions[qlist];
-        let removeQ = vGQuestions.questions.splice(qlist,1);
+        //let removeQ = vGQuestions.questions.splice(qlist,1);
         console.log(this);
         return randomQ;
     }
     let tAnswer = function(qlist){
         let correctAnswer = vGQuestions.correctA[qlist];
-        let removeA= vGQuestions.correctA.splice(qlist,1);
+        //let removeA= vGQuestions.correctA.splice(qlist,1);
         console.log(this);
         return correctAnswer;
     }
@@ -83,9 +83,10 @@ $('startbutton').on('click', function(){
     }
     //returns correct answer and questions
     for (i= 0; i< 12; i++){
-        let qIndex = Math.floor(Math.random(vGQuestions.questions.length)*vGQuestions.questions.length);
-        $('.trivia').append('<h2>'+vGQuestions(qIndex)+ '</h2>');
+        let qlist = Math.floor(Math.random(vGQuestions.questions.length) * vGQuestions.questions.length);
+        $('.trivia').append('<h2>'+vGQuestions(qlist)+ '</h2>');
         $('.trivia').append('<input type="radio" id="correct-' + i + '" name="question-' + i + '">' + tAnswer(qIndex));
         $('.trivia').append('<input type="radio" name="question-' + i + '">' + twrongA());
+        console.log(this)
     }
 })
